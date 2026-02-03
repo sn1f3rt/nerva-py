@@ -37,7 +37,7 @@ class VersionInfo(NamedTuple):
 
 
 version_info: VersionInfo = VersionInfo(
-    major=1, minor=1, micro=0, releaselevel="final", serial=0
+    major=1, minor=1, micro=1, releaselevel="final", serial=0
 )
 
 __version__ = str(version_info)
