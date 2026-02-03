@@ -1,16 +1,16 @@
 [project]
 name = "nerva-py"
 version = "1.1.0"
-description = "Python bindings for the JSON RPC interface of the Nerva cryptocurrency."
+description = "Python bindings for the JSON RPC interface of the Nerva (XNV) cryptocurrency."
 license = "MIT"
 authors = [
   { name="Sayan Bhattacharyya", email="sayan@sn1f3rt.dev" },
 ]
 readme = "README.md"
-requires-python = ">=3.8"
-homepage = "https://github.com/Sn1F3rt/nerva-py"
-repository = "https://github.com/Sn1F3rt/nerva-py"
-documentation = "https://github.com/Sn1F3rt/nerva-py?tab=readme-ov-file#documentation"
+requires-python = ">=3.10"
+homepage = "https://github.com/sn1f3rt/nerva-py"
+repository = "https://github.com/sn1f3rt/nerva-py"
+documentation = "https://github.com/sn1f3rt/nerva-py?tab=readme-ov-file#documentation"
 keywords = ["nerva", "cryptocurrency", "json-rpc", "bindings", "python"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -27,13 +27,13 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-    "httpx>=0.27.2",
+    "httpx==0.28.1",
 ]
 
-[tool.uv]
-dev-dependencies = [
-    "pre-commit>=3.5.0",
-    "ruff>=0.7.0",
+[dependency-groups]
+dev = [
+    "pre-commit==4.5.1",
+    "ruff==0.14.14",
 ]
 
 [tool.hatch.build.targets.wheel]

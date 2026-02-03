@@ -1,8 +1,7 @@
-# Nerva Python Library
+# Nerva (XNV) Python Library
 
-[![Ruff](https://github.com/Sn1F3rt/nerva-py/actions/workflows/ruff.yml/badge.svg)](https://github.com/Sn1F3rt/nerva-py/actions/workflows/ruff.yml)
-[![Build](https://github.com/Sn1F3rt/nerva-py/actions/workflows/build.yml/badge.svg)](https://github.com/Sn1F3rt/nerva-py/actions/workflows/build.yml)
-[![License](https://img.shields.io/github/license/Sn1F3rt/nerva-py)](LICENSE)
+[![Ruff](https://github.com/sn1f3rt/nerva-py/actions/workflows/ruff.yml/badge.svg)](https://github.com/sn1f3rt/nerva-py/actions/workflows/ruff.yml)
+[![Build](https://github.com/sn1f3rt/nerva-py/actions/workflows/build.yml/badge.svg)](https://github.com/sn1f3rt/nerva-py/actions/workflows/build.yml)
 
 ## Table of Contents
 
@@ -16,13 +15,13 @@
 
 ## About
 
-Python bindings for the JSON RPC interface of the Nerva cryptocurrency.
+Python bindings for the JSON RPC interface of the [Nerva (XNV)](https://nerva.one/) cryptocurrency.
 
 ## Installation
 
 ### Requirements
 
-- Python 3.8+
+- Python 3.10+
 - [`uv`](https://docs.astral.sh/uv/) (for development only)
 
 ### Setup
@@ -66,11 +65,11 @@ asyncio.run(main())
 
 ## Support
 
-- [Issues](https://github.com/Sn1F3rt/nerva-py/issues)
+- [Issues](https://github.com/sn1f3rt/nerva-py/issues)
 - [Discord](https://discord.gg/ufysfvcFwe) - `Development > #nerva-py`
 
 ## License
 
-[MIT License](LICENSE)
+[![License](https://img.shields.io/github/license/sn1f3rt/nerva-py)](LICENSE)
 
-Copyright &copy; 2024 [Sayan "Sn1F3rt" Bhattacharyya](https://sn1f3rt.dev)
+Copyright &copy; 2024-present [Sayan "sn1f3rt" Bhattacharyya](https://sn1f3rt.dev)
