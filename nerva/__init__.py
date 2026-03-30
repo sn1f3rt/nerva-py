@@ -3,8 +3,13 @@ from typing import Literal, NamedTuple
 from . import (
     utils as utils,
     daemon as daemon,
-    wallet as wallet,
+    wallet_rpc as wallet_rpc,
 )
+from .daemon import (
+    DaemonRPC as DaemonRPC,
+    DaemonHTTP as DaemonHTTP,
+)
+from .wallet_rpc import WalletRPC as WalletRPC
 
 
 class VersionInfo(NamedTuple):
@@ -17,21 +22,21 @@ class VersionInfo(NamedTuple):
     serial: int
 
     def __str__(self) -> str:
-        v = f"{version_info.major}.{version_info.minor}.{version_info.micro}"
+        v = f"{self.major}.{self.minor}.{self.micro}"
 
-        if version_info.releaselevel != "final":
-            if version_info.releaselevel == "alpha":
+        if self.releaselevel != "final":
+            if self.releaselevel == "alpha":
                 v += "a"
-            elif version_info.releaselevel == "beta":
+            elif self.releaselevel == "beta":
                 v += "b"
-            elif version_info.releaselevel == "release-candidate":
+            elif self.releaselevel == "release-candidate":
                 v += "rc"
-            elif version_info.releaselevel == "post":
+            elif self.releaselevel == "post":
                 v += "post"
-            elif version_info.releaselevel == "dev":
+            elif self.releaselevel == "dev":
                 v += "dev"
 
-            v += str(version_info.serial)
+            v += str(self.serial)
 
         return v
 

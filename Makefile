@@ -1,9 +1,3 @@
-env:
-	uv venv
-
-rmenv:
-	rm -rf .venv
-
 install: install-prod
 
 install-dev:
@@ -18,9 +12,12 @@ build:
 publish:
 	uv publish --token $(token)
 
-format:
-	ruff check --select I --fix .
-	ruff format .
+lint:
+	uv run ruff check --select I --fix .
+	uv run ruff format .
 
-.PHONY: env rmenv install install-dev install-prod build publish format
+typecheck:
+	uv run mypy nerva
+
+.PHONY: env rmenv install install-dev install-prod build publish lint typecheck
 .DEFAULT_GOAL := build

@@ -1,0 +1,31 @@
+name: ci/gh-actions/lint
+
+on:
+    push:
+        paths-ignore:
+            - "README.md"
+    pull_request:
+        paths-ignore:
+            - "README.md"
+    workflow_dispatch:
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v5
+            -   name: Install uv
+                uses: astral-sh/setup-uv@v7
+                with:
+                    version: "0.9.28"
+                    enable-cache: true
+            -   name: Set up Python
+                uses: actions/setup-python@v5
+                with:
+                    python-version-file: ".python-version"
+            -   name: Install dependencies
+                run: uv sync --all-extras
+            -   name: Lint
+                run: uv run ruff check --select I --no-fix .
+            -   name: Format
+                run: uv run ruff format --check .

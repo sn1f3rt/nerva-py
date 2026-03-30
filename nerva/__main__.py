@@ -8,7 +8,7 @@ import nerva
 
 
 def show_version() -> None:
-    entries = list()
+    entries = []
 
     v = sys.version_info
     entries.append(
@@ -26,7 +26,7 @@ def show_version() -> None:
     print("\n".join(entries))
 
 
-def core(parser: argparse.ArgumentParser, args: argparse.Namespace) -> None:
+def core(*, parser: argparse.ArgumentParser, args: argparse.Namespace) -> None:
     if args.version:
         show_version()
     else:
@@ -47,7 +47,7 @@ def parse_args() -> tuple[argparse.ArgumentParser, argparse.Namespace]:
 
 def main() -> None:
     parser, args = parse_args()
-    args.func(parser, args)
+    args.func(parser=parser, args=args)
 
 
 if __name__ == "__main__":

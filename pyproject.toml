@@ -17,8 +17,6 @@ classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -32,6 +30,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "mypy==1.19.1",
     "pre-commit==4.5.1",
     "ruff==0.14.14",
 ]
@@ -55,3 +54,7 @@ length-sort = true
 
 [tool.ruff.lint.isort.sections]
 "typing" = ["typing"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
