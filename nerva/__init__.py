@@ -13,6 +13,24 @@ from .wallet_rpc import WalletRPC as WalletRPC
 
 
 class VersionInfo(NamedTuple):
+    """Version information for the nerva-py library.
+
+    Attributes
+    ----------
+    major : int
+        Major version number.
+    minor : int
+        Minor version number.
+    micro : int
+        Micro (patch) version number.
+    releaselevel : str
+        Release level: one of ``alpha``, ``beta``, ``release-candidate``,
+        ``post``, ``dev``, or ``final``.
+    serial : int
+        Release serial number.
+
+    """
+
     major: int
     minor: int
     micro: int
@@ -22,6 +40,7 @@ class VersionInfo(NamedTuple):
     serial: int
 
     def __str__(self) -> str:
+        """Return the version string (e.g. ``1.2.3`` or ``1.2.3a1``)."""
         v = f"{self.major}.{self.minor}.{self.micro}"
 
         if self.releaselevel != "final":

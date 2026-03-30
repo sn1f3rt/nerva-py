@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 homepage = "https://github.com/sn1f3rt/nerva-py"
 repository = "https://github.com/sn1f3rt/nerva-py"
-documentation = "https://github.com/sn1f3rt/nerva-py?tab=readme-ov-file#documentation"
+documentation = "https://nerva-py.readthedocs.io"
 keywords = ["nerva", "cryptocurrency", "json-rpc", "bindings", "python"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -33,6 +33,11 @@ dev = [
     "mypy==1.19.1",
     "pre-commit==4.5.1",
     "ruff==0.14.14",
+]
+docs = [
+    "furo==2024.8.6",
+    "sphinx==7.4.7",
+    "sphinx-autodoc-typehints==2.3.0",
 ]
 
 [tool.hatch.build.targets.wheel]

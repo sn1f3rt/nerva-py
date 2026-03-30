@@ -6,6 +6,9 @@ install-dev:
 install-prod:
 	uv sync --all-extras --no-dev
 
+install-docs:
+	uv sync --group docs
+
 build:
 	uv build
 
@@ -19,5 +22,8 @@ lint:
 typecheck:
 	uv run mypy nerva
 
-.PHONY: env rmenv install install-dev install-prod build publish lint typecheck
+docs:
+	uv run sphinx-build -b html docs docs/_build/html
+
+.PHONY: env rmenv install install-dev install-prod install-docs build publish lint typecheck docs
 .DEFAULT_GOAL := build

@@ -66,6 +66,22 @@ class WalletRPC:
     async def _request(
         self, *, method: str, params: dict[str, Any]
     ) -> dict[str, Any]:
+        """
+        Send a JSON-RPC request to the wallet.
+
+        Parameters
+        ----------
+        method : str
+            The JSON-RPC method name.
+        params : dict[str, Any]
+            The parameters for the method.
+
+        Returns
+        -------
+        dict[str, Any]
+            The response from the wallet.
+
+        """
         async with httpx.AsyncClient(auth=self.auth) as client:
             response = await client.post(
                 f"{self.url}/json_rpc",

@@ -28,7 +28,7 @@ class DaemonHTTP:
         The URL of the daemon.
     timeout : float
         The timeout for the request.
-    headers : dict
+    headers : dict[str, str]
         The headers for the request.
 
     """
@@ -55,6 +55,22 @@ class DaemonHTTP:
     async def _request(
         self, *, endpoint: str, params: dict[str, Any]
     ) -> dict[str, Any]:
+        """
+        Send an HTTP POST request to the daemon.
+
+        Parameters
+        ----------
+        endpoint : str
+            The HTTP endpoint path.
+        params : dict[str, Any]
+            The request body parameters.
+
+        Returns
+        -------
+        dict[str, Any]
+            The response from the daemon.
+
+        """
         async with httpx.AsyncClient(auth=self.auth) as client:
             response = await client.post(
                 f"{self.url}/{endpoint}",

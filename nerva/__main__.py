@@ -8,6 +8,7 @@ import nerva
 
 
 def show_version() -> None:
+    """Print version information for nerva-py and its dependencies."""
     entries = []
 
     v = sys.version_info
@@ -27,6 +28,7 @@ def show_version() -> None:
 
 
 def core(*, parser: argparse.ArgumentParser, args: argparse.Namespace) -> None:
+    """Dispatch CLI commands based on parsed arguments."""
     if args.version:
         show_version()
     else:
@@ -34,6 +36,7 @@ def core(*, parser: argparse.ArgumentParser, args: argparse.Namespace) -> None:
 
 
 def parse_args() -> tuple[argparse.ArgumentParser, argparse.Namespace]:
+    """Build the argument parser and return it alongside the parsed arguments."""
     parser = argparse.ArgumentParser(
         prog="pyxnv", description="Tools for helping with the library"
     )
@@ -46,6 +49,7 @@ def parse_args() -> tuple[argparse.ArgumentParser, argparse.Namespace]:
 
 
 def main() -> None:
+    """Entry point for the nerva-py CLI."""
     parser, args = parse_args()
     args.func(parser=parser, args=args)
 

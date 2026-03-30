@@ -54,6 +54,22 @@ class DaemonRPC:
     async def _request(
         self, *, method: str, params: dict[str, Any]
     ) -> dict[str, Any]:
+        """
+        Send a JSON-RPC request to the daemon.
+
+        Parameters
+        ----------
+        method : str
+            The JSON-RPC method name.
+        params : dict[str, Any]
+            The parameters for the method.
+
+        Returns
+        -------
+        dict[str, Any]
+            The response from the daemon.
+
+        """
         async with httpx.AsyncClient(auth=self.auth) as client:
             response = await client.post(
                 f"{self.url}/json_rpc",
@@ -69,7 +85,7 @@ class DaemonRPC:
 
         Returns
         -------
-        dict
+        dict[str, Any]
             The response from the daemon.
         """
         return await self._request(method="get_block_count", params={})
@@ -85,7 +101,7 @@ class DaemonRPC:
 
         Returns
         -------
-        dict
+        dict[str, Any]
             The response from the daemon.
 
         """
@@ -109,7 +125,7 @@ class DaemonRPC:
 
         Returns
         -------
-        dict
+        dict[str, Any]
             The response from the daemon.
 
         """

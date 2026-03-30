@@ -3,6 +3,7 @@
 [![Lint](https://github.com/sn1f3rt/nerva-py/actions/workflows/lint.yml/badge.svg)](https://github.com/sn1f3rt/nerva-py/actions/workflows/lint.yml)
 [![Type Check](https://github.com/sn1f3rt/nerva-py/actions/workflows/typecheck.yml/badge.svg)](https://github.com/sn1f3rt/nerva-py/actions/workflows/typecheck.yml)
 [![Build](https://github.com/sn1f3rt/nerva-py/actions/workflows/build.yml/badge.svg)](https://github.com/sn1f3rt/nerva-py/actions/workflows/build.yml)
+[![Docs](https://readthedocs.org/projects/nerva-py/badge/?version=latest)](https://nerva-py.readthedocs.io/en/latest/)
 
 ## Table of Contents
 
@@ -40,7 +41,7 @@ uv add git+https://github.com/Sn1F3rt/nerva-py.git --branch main
 
 ## Documentation
 
-Developers please refer to the docstrings in the code for more information. Full API reference will be available soon.
+Full API reference is available at [nerva-py.readthedocs.io](https://nerva-py.readthedocs.io).
 
 Here is a simple example to get you started:
 
