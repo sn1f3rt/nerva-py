@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.abspath(".."))
 
 project = "nerva-py"
 author = "Sayan Bhattacharyya"
-copyright = f"2024, {author}"
+copyright = f"2024-present, {author}"
 
 extensions = [
     "sphinx.ext.autodoc",
